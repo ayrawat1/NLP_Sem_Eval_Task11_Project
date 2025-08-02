@@ -35,16 +35,13 @@ class ComprehensiveEvaluator:
         self.emotions = ['joy', 'sadness', 'fear', 'anger', 'surprise', 'disgust']
 
     def extract_baseline_results(self, baseline_results):
-        """
-        Extract baseline model results for comparison
-
-        Args:
-            baseline_results (dict): Results from baseline experiments
-
-        Returns:
-            dict: Structured baseline results
-        """
+        """Extract baseline model results for comparison"""
         baseline_summary = {'track_a': {}, 'track_b': {}}
+
+        # Handle None baseline_results
+        if baseline_results is None:
+            print("⚠️  No baseline results available")
+            return baseline_summary
 
         # Track A Baselines
         if baseline_results.get('track_a_baselines'):
