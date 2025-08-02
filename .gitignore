@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific - Large files
+models/
+*.pth
+*.pt
+*.bin
+*.safetensors
+checkpoints/
+saved_models/
+
+# Data files
+*.csv
+*.tsv
+dataset/
+data/raw/
+data/processed/
+
+# Results
+results/
+logs/
+outputs/
+wandb/
+
+# Temporary
+*.tmp
+*.temp
+tmp/
