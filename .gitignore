@@ -31,18 +31,6 @@ models/
 checkpoints/
 saved_models/
 
-# Data files
-*.csv
-*.tsv
-dataset/
-data/raw/
-data/processed/
-
-# Results
-results/
-logs/
-outputs/
-wandb/
 
 # Temporary
 *.tmp
