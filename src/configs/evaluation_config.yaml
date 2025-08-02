@@ -1,0 +1,73 @@
+# Evaluation Configuration
+# =======================
+
+comparison:
+  include_baselines: true
+  include_transformers: true
+  include_cross_lingual: true
+
+metrics:
+  classification:
+    - "f1_macro"
+    - "f1_micro" 
+    - "f1_weighted"
+    - "precision"
+    - "recall"
+    - "accuracy"
+  
+  regression:
+    - "pearson"
+    - "spearman"
+    - "mse"
+    - "mae"
+    - "r2"
+
+visualization:
+  create_plots: true
+  plot_types:
+    - "performance_comparison"
+    - "training_curves"
+    - "per_emotion_breakdown"
+    - "cross_lingual_analysis"
+    - "confusion_matrix"
+  
+  figure_size: [15, 10]
+  dpi: 300
+  format: "png"
+  save_plots: true
+
+analysis:
+  statistical_tests: true
+  significance_level: 0.05
+  effect_size: true
+  per_emotion_analysis: true
+  error_analysis: true
+
+report:
+  generate_html: true
+  generate_pdf: false
+  include_code: false
+  include_data_samples: true
+  include_model_details: true
+
+output:
+  results_dir: "./results/evaluation_results"
+  report_dir: "./results/reports"
+  figures_dir: "./results/figures"
+  timestamp: true
+
+languages:
+  target_languages: ["eng", "deu", "ptbr"]
+  language_analysis: true
+  cross_lingual_transfer: true
+
+emotions:
+  target_emotions: ["joy", "sadness", "fear", "anger", "surprise", "disgust"]
+  emotion_hierarchy: false
+  emotion_correlations: true
+
+data:
+  bootstrap_samples: 1000
+  confidence_interval: 0.95
+  sample_results: true
+  sample_size: 100

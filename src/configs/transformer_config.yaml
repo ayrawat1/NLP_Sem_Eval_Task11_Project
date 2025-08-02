@@ -1,0 +1,62 @@
+# Transformer Model Configuration
+# ===============================
+
+model:
+  name: "bert-base-multilingual-cased"
+  max_length: 128
+  dropout_rate: 0.3
+  pooling: "cls"  # cls, mean, max, attention
+  task_type: "multi_task"  # classification, regression, multi_task
+
+training:
+  batch_size: 8
+  num_epochs: 3
+  learning_rate: 2e-5
+  warmup_steps: 100
+  weight_decay: 0.01
+  gradient_clipping: 1.0
+  save_best_model: true
+  early_stopping:
+    enabled: false
+    patience: 3
+    metric: "f1_macro"
+
+optimizer:
+  name: "adamw"
+  eps: 1e-8
+  betas: [0.9, 0.999]
+
+scheduler:
+  name: "linear_warmup"
+  warmup_ratio: 0.1
+
+data:
+  languages: ["eng", "deu", "ptbr"]
+  emotions: ["joy", "sadness", "fear", "anger", "surprise", "disgust"]
+  test_size: 0.2
+  random_state: 42
+  max_samples: null  # null for all samples
+
+loss:
+  classification_loss: "bce_with_logits"
+  regression_loss: "mse"
+  loss_weights:
+    classification: 1.0
+    regression: 1.0
+
+evaluation:
+  metrics: ["f1_macro", "f1_micro", "pearson", "mse"]
+  threshold: 0.5
+  save_predictions: true
+
+output:
+  save_model: true
+  save_tokenizer: true
+  model_dir: "./models"
+  results_dir: "./results/transformer_results"
+  log_dir: "./logs"
+
+hardware:
+  device: "auto"  # auto, cpu, cuda
+  mixed_precision: false
+  dataloader_workers: 0
