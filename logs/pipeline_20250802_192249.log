@@ -1,0 +1,6 @@
+2025-08-02 19:22:49,240 - INFO - Data exploration completed successfully
+2025-08-02 19:22:49,241 - INFO - Data preprocessing completed successfully
+2025-08-02 19:22:49,242 - INFO - Baseline model training completed successfully
+2025-08-02 19:22:49,243 - INFO - Transformer model training completed successfully
+2025-08-02 19:22:49,245 - INFO - Comprehensive evaluation completed successfully
+2025-08-02 19:22:49,245 - INFO - Pipeline completed successfully
