@@ -31,10 +31,7 @@ models/
 checkpoints/
 saved_models/
 
-scripts/results/
 # Temporary
 *.tmp
 *.temp
 tmp/
-
-scripts/results/
